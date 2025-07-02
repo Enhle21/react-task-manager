@@ -18,4 +18,8 @@ export function ThemeProvider({ children }) {
   );
 }
 
+<<<<<<< HEAD
 export const useTheme = () => useContext(ThemeContext);
+=======
+export const useTheme = () => useContext(ThemeContext);
+>>>>>>> 747a97dc626f52151b859af3011a0cbbbf7d0fb0

@@ -11,4 +11,8 @@ function Button({ variant = 'primary', children, ...props }) {
     </button>
   );
 }
+<<<<<<< HEAD
 export default Button;
+=======
+export default Button;
+>>>>>>> 747a97dc626f52151b859af3011a0cbbbf7d0fb0

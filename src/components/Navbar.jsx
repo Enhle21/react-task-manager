@@ -11,4 +11,8 @@ function Navbar() {
     </nav>
   );
 }
+<<<<<<< HEAD
 export default Navbar;
+=======
+export default Navbar;
+>>>>>>> 747a97dc626f52151b859af3011a0cbbbf7d0fb0
