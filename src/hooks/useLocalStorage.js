@@ -1,33 +1,25 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 
 function useLocalStorage(key, initialValue) {
-  const [value, setValue] = useState(() => {
-    const saved = localStorage.getItem(key);
-    return saved ? JSON.parse(saved) : initialValue;
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.log(error);
+      return initialValue;
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
+    try {
+      window.localStorage.setItem(key, JSON.stringify(storedValue));
+    } catch (error) {
+      console.log(error);
+    }
+  }, [key, storedValue]);
 
-  return [value, setValue];
+  return [storedValue, setStoredValue];
 }
 
-=======
-import {useStae, useEffect} from 'react';
-
-function useLocalStorage(key, initialValue) {
-    const [value, setValue] = useState(() => {
-        const saved = localStorage.getItem(key);
-        return saved ? JSON.parse(saved) : initialValue;
-    });
-
-    useEffect(() => {
-        localStorage.setItem(key, JSON.stringify(value));
-    }, [value, key]);
-
-    return [value, setValue];
-}
->>>>>>> 747a97dc626f52151b859af3011a0cbbbf7d0fb0
 export default useLocalStorage;
